@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'webdrivers', '~> 4.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'win32console'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -55,6 +55,7 @@ group :test do
   #gem 'webdrivers', '~> 3.0'
   gem 'guard',                    '>=2.13.0'
   gem 'guard-minitest',           '>=2.4.4'
+  gem 'minitest-reporters'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
