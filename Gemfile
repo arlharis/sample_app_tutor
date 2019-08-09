@@ -7,6 +7,8 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
 gem 'bcrypt', '3.1.13'
 gem 'faker',  '1.7.3'
+gem 'carrierwave', '>= 2.0.0.rc'
+gem 'mini_magick'
 gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 #gem 'bcrypt', '~>3.1.12'
@@ -66,6 +68,11 @@ group :test do
   gem 'guard-minitest',           '>=2.4.4'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
+end
+
+group :production do
+  #gem 'pg',  '0.20.0'
+  gem 'fog'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
