@@ -13,7 +13,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get users_new_url
+    get signup_path
     assert_response :success
   end
 
@@ -34,10 +34,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@other_user)
     assert_not @other_user.admin?
     patch user_path(@other_user), params: {
-                                    user: { password:              "lukman22",
-                                            password_confirmation: "lukman22",
-                                            admin: true } }
-    assert_not @other_user.reload.admin?
+        user: { password: @other_user.password,
+                password_confirmation: @other_user.password,
+                admin: true } }
+    assert_not @other_user.admin?
   end
 
   test "should redirect destroy when not logged in" do
@@ -53,6 +53,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
     assert_redirected_to root_url
+  end
+
+  test "should redirect following when not logged in" do
+    get following_user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  test "should redirect followers when not logged in" do
+    get followers_user_path(@user)
+    assert_redirected_to login_url
   end
 
 end

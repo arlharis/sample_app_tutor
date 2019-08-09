@@ -1,0 +1,15 @@
+one:
+  follower: lukman
+  followed: lana
+
+two:
+  follower: lukman
+  followed: malory
+
+three:
+  follower: lana
+  followed: lukman
+
+four:
+  follower: aimi
+  followed: lukman
