@@ -8,7 +8,9 @@ gem 'rails', '~> 5.2.3'
 gem 'bcrypt', '3.1.13'
 gem 'faker',  '1.7.3'
 gem 'carrierwave', '>= 2.0.0.rc'
-gem 'mini_magick'
+#gem 'mini_magick',             '>=4.9.5'
+#gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 #gem 'bcrypt', '~>3.1.12'
@@ -71,7 +73,6 @@ group :test do
 end
 
 group :production do
-  #gem 'pg',  '0.20.0'
   gem 'fog', '~> 2.2'
 end
 
